@@ -20,9 +20,9 @@ public class LinearSearch {
         if (ans.equals("Y")){
             firstOccurrence = true;
         }
-//        linearSearch(arr, target, firstOccurrence);
-//        findOccurrence(arr, target);
-//        findMinMax(arr);
+        linearSearch(arr, target, firstOccurrence);
+        findOccurrence(arr, target);
+        findMinMax(arr);
         checkSorted(arr);
     }
 
