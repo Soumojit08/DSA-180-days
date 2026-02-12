@@ -20,26 +20,26 @@ public class BinarySearch {
             System.out.println("Elem not found in array ");
         }
         System.out.println("Elem " + target + " found at index " + ansDesc);
-        int ansAgonistic = binarySearchOrderAgonistic(arr, target);
-        if (ansAgonistic == -1){
-            System.out.println("Elem not found in array ");
-        }
-        System.out.println("Elem " + target + " found at index " + ansAgonistic);
+        binarySearchOrderAgonistic(arr2, target);
     }
 
 
-    public static int binarySearchOrderAgonistic(int[] arr, int target){
+    public static void binarySearchOrderAgonistic(int[] arr, int target){
         int start = 0;
         int end = arr.length - 1;
+        int ans = -1;
 
         if (arr[start] <= arr[end]){
-            binarySearch(arr, target);
+            ans = binarySearch(arr, target);
         }
         else {
-            binarySearchDesc(arr, target);
+            ans = binarySearchDesc(arr, target);
         }
 
-        return -1;
+        if (ans == -1){
+            System.out.println("Elem not found");
+        }
+        System.out.println("Elem " + target + " found at index " + ans);
     }
 
     public static int binarySearch(int[] arr, int target){
