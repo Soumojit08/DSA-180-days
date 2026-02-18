@@ -18,10 +18,7 @@ public class MinRSADuplicate {
             if (arr[start] == arr[mid] && arr[mid] == arr[end]){
                 start++;
                 end--;
-                continue;
-            }
-
-            if (arr[start] <= arr[mid]) {
+            } else if (arr[start] <= arr[mid]) {
                 minimum = Math.min(minimum, arr[start]);
                 start = mid + 1;
             } else {
