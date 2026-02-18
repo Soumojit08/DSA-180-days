@@ -18,19 +18,22 @@ public class FirstOccBS {
         System.out.println("First occ " + first);
         int last = lastOccurrence(arr, target);
         System.out.println("Last occ " + last);
+        int count = countOccurrence(arr,first,last);
+        System.out.println("Count : " + count);
     }
 
     static int firstOccurrence(int[] arr, int target){
         int start = 0;
         int end = arr.length-1;
         int ans = -1;
+
         while (start<=end){
             int mid = start + (end-start)/2;
 
             if (arr[mid]==target){
                 ans = mid;
-                end = mid-1;
-            } else if (arr[mid]<target) {
+                end=mid-1;
+            } else if (arr[mid]<target){
                 start=mid+1;
             } else {
                 end=mid-1;
@@ -44,13 +47,14 @@ public class FirstOccBS {
         int start = 0;
         int end = arr.length-1;
         int ans = -1;
+
         while (start<=end){
             int mid = start + (end-start)/2;
 
             if (arr[mid]==target){
                 ans = mid;
-                start = mid+1;
-            } else if (arr[mid]<target) {
+                start=mid+1;
+            } else if (arr[mid]<target){
                 start=mid+1;
             } else {
                 end=mid-1;
@@ -58,5 +62,9 @@ public class FirstOccBS {
         }
 
         return ans;
+    }
+
+    static int countOccurrence(int[] arr, int first, int last){
+        return last - first + 1;
     }
 }
