@@ -33,6 +33,7 @@ public class BrickSort {
 
             if (!flag){
                 isSorted = true;
+                break;
             }
 
         }
