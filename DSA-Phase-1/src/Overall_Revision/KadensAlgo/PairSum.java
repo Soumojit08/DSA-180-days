@@ -21,7 +21,7 @@ public class PairSum {
         }
     }
 
-    private static void optimal(int[] arr, int target){
+    private static void optimal(int[] arr, int target){ //O(N)
         int start = 0;
         int end = arr.length-1;
 
