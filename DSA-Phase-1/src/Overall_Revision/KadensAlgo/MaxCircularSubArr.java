@@ -11,7 +11,7 @@ class Solution {
         }
         System.out.println("Total Sum : " + totalSum);
         int minSum = kadanesAlgo(arr);
-        System.out.println("Min Sum : " + minSum);
+        System.out.println("Min Sum : " + (-minSum));
         //circular = total - min then return max(total,circular)
         int circularSum = totalSum - (-minSum);
         System.out.println("Circular Sum : " + circularSum);
@@ -40,8 +40,8 @@ class Solution {
 public class MaxCircularSubArr {
     public static void main(String[] args) {
         Solution sl = new Solution();
-        int[] arr = {5,-3,5};
+        int[] arr = {1,-2,3,-2};
         int ans = sl.maxSubarraySumCircular(arr);
-        System.out.println("Output : " + ans + "Expected Output : 10 ");
+        System.out.println("Output : " + ans + "Expected Output : 3 ");
     }
 }
