@@ -12,26 +12,27 @@ public class ThreeSum {
     }
 
     private static void optimal(int[] arr) {
-        //sort the array
+        //Sort
         Arrays.sort(arr);
+        //Creating List of List
+        List<List<Integer>> uniqueTriplate = new ArrayList<>();
         int n = arr.length;
-        List<List<Integer>> uniqueTriplets = new ArrayList<>();
-        // for i value have 2 pointer j and k to check the condition arr[i]+arr[j]+arr[k] = 0
 
-        for (int i = 0; i < n - 2; i++) {
-            int j = i + 1;
-            int k = n - 1;
-
-            if (i > 0 && arr[i] == arr[i - 1]) {
+        for (int i = 0; i < n-2 ; i++) {
+            if (i > 0 && arr[i] == arr[i-1]) {
                 continue;
             }
 
-            while (j < k) {
+            int j = i+1;
+            int k = n-1;
+
+            while (j<k){
                 int target = arr[i] + arr[j] + arr[k];
-                if (target == 0) {
-                    uniqueTriplets.add(new ArrayList<>(Arrays.asList(arr[i], arr[j], arr[k])));
-                    while (arr[j] == arr[j + 1]) j++;
-                    while (arr[k] == arr[k - 1]) k--;
+
+                if (target == 0){
+                    uniqueTriplate.add(new ArrayList<>(Arrays.asList(arr[i], arr[j], arr[k])));
+                    while (j<k && arr[j] == arr[j+1]) j++;
+                    while (j<k && arr[k] == arr[k-1]) k--;
                     j++;
                     k--;
                 } else if (target < 0) {
@@ -41,8 +42,7 @@ public class ThreeSum {
                 }
             }
         }
+        System.out.println(uniqueTriplate);
 
-
-        System.out.println(uniqueTriplets);
     }
 }
