@@ -12,6 +12,7 @@ public class RemoveDuplicate {
     private static void reoveDuplicate(int[] arr){
         int n = arr.length;
         Arrays.sort(arr);
+        System.out.println("Sorted Array : " + Arrays.toString(arr));
 
         int i = 0;
         for (int j = 0; j < n; j++) {
@@ -21,6 +22,7 @@ public class RemoveDuplicate {
             }
         }
 
-        System.out.println(Arrays.toString(arr));
+        arr[n-1] = -1;
+        System.out.println("Removed array : " + Arrays.toString(arr));
     }
 }
