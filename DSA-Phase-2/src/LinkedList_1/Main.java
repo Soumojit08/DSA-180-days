@@ -4,7 +4,10 @@ public class Main {
     public static void main(String[] args) {
         LL list = new LL();
         list.inserFirst(10);
+        list.inserFirst(20);
+        list.inserFirst(30);
+        list.inserFirst(40);
 
-        System.out.println(list);
+        list.displayList();
     }
 }

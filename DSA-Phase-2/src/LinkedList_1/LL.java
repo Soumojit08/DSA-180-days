@@ -35,8 +35,16 @@ public class LL {
         if (tail==null){
             tail = head;
         }
-
         size++;
+    }
+
+    public void displayList(){
+        Node temp = head;
+
+        while (temp != null){
+            System.out.println(temp.value);
+            temp = temp.next;
+        }
     }
 }
 
