@@ -39,6 +39,17 @@ public class LL {
         }
         size++;
     }
+
+    //inserAtEnd function
+    public void insertAtEnd(int val){
+        if (tail == null) inserFirst(val);
+
+        Node node = new Node(val);
+        tail.next = node;
+        tail = node;
+        size++;
+    }
+
     //Display list with temp node
     public void displayList(){
         Node temp = head;
