@@ -7,6 +7,7 @@ public class LL {
 
     private int size;
 
+    //LL constructor to initialize list size increases with no of nodes
     public LL() {
         this.size = 0;
     }
@@ -16,17 +17,18 @@ public class LL {
         private int value;
         private Node next;
 
-
+        //Node constructor to get value
         public Node(int value) {
             this.value = value;
         }
-
+        //Node constructor to initialize value and next pointer
         public Node(int value, Node next) {
             this.value = value;
             this.next = next;
         }
     }
 
+    //insertFirst function
     public void inserFirst(int val){
         Node node = new Node(val);
         node.next = head;
@@ -37,14 +39,15 @@ public class LL {
         }
         size++;
     }
-
+    //Display list with temp node
     public void displayList(){
         Node temp = head;
 
         while (temp != null){
-            System.out.println(temp.value);
+            System.out.print(temp.value + " -> " );
             temp = temp.next;
         }
+        System.out.print("END");
     }
 }
 
