@@ -78,7 +78,14 @@ public class LL {
 
     //Delete first
     public void deleteFirst(){
+        int val = head.value;
         head = head.next;
+
+        if (head == null){
+            tail = null;
+        }
+        size--;
+        System.out.println("deleted : " + val);
     }
 
     //Display list with temp node
