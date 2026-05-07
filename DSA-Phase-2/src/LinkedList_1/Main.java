@@ -11,6 +11,7 @@ public class Main {
         list.insert(3, 25);
 
         list.deleteFirst();
+        list.deleteEnd();
 
         list.displayList();
     }
