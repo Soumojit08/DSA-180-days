@@ -10,6 +10,8 @@ public class Main {
         list.insertAtEnd(5);
         list.insert(3, 25);
 
+        list.deleteFirst();
+
         list.displayList();
     }
 }

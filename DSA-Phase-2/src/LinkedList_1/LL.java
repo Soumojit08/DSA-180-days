@@ -76,6 +76,11 @@ public class LL {
         size++;
     }
 
+    //Delete first
+    public void deleteFirst(){
+        head = head.next;
+    }
+
     //Display list with temp node
     public void displayList(){
         Node temp = head;
