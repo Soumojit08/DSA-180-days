@@ -50,6 +50,32 @@ public class LL {
         size++;
     }
 
+    public void insert(int pos, int val){
+        if(pos < 0 || pos > size){
+            System.out.println("Invalid Position");
+            return;
+        }
+
+        if (pos == 0) {
+            inserFirst(val);
+            return;
+        };
+        if (pos == size){
+            insertAtEnd(val);
+            return;
+        }
+
+        Node temp = head;
+        for (int i = 1; i < pos; i++) {
+            temp = temp.next;
+        }
+
+        Node node = new Node(val, temp.next);
+        temp.next = node;
+
+        size++;
+    }
+
     //Display list with temp node
     public void displayList(){
         Node temp = head;
