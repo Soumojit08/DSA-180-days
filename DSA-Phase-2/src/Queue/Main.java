@@ -37,7 +37,7 @@ public class Main {
         }
 
         int dequeue(){
-            if (front == rear){
+            if (front == rear & front!=0){
                 System.out.println("Queue Underflow");
                 return -1;
             } else {
@@ -52,7 +52,7 @@ public class Main {
         }
 
         int peek() {
-            if (front == rear && front==-1){
+            if (front == rear && front!=0){
                 System.out.println("Queue Underflow No elem");
                 return -1;
             } else {
@@ -83,6 +83,8 @@ class Sol {
         obj.display();
         int ans = obj.peek();
         System.out.println("\nfront : " + ans);
+        int size = obj.size();
+        System.out.println(size);
 
     }
 }
