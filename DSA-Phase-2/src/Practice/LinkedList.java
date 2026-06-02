@@ -43,19 +43,70 @@ public class LinkedList {
     }
 
     public void insertAtPosition(int val, int pos){
+        if(pos < 0 || pos > size) {
+            System.out.println("Invalid Pos");
+            return;
+        }
+        if (pos==0) {
+            insertFirst(val);
+        }
+        else if (pos==size) {
+            insertEnd(val);
+        } else {
+            Node temp = head;
 
+            for (int i = 1; i < pos; i++) {
+                temp = temp.next;
+            }
+
+            Node node = new Node(val, temp.next);
+            temp.next = node;
+            size++;
+        }
     }
 
     public void deleteFirst(){
-
+        if (head == null){
+            System.out.println("No elem to delete");
+            return;
+        }
+        head = head.next;
+        size--;
     }
 
     public void deleteEnd(){
+        if (head == null){
+            System.out.println("No elem to delete");
+            return;
+        }
+        Node temp = head;
 
+        while (temp.next.next != null){
+            temp = temp.next;
+        }
+
+        tail = temp;
+        tail.next = null;
+        size--;
     }
 
-    public void deleteAtPos(){
+    public void deleteAtPos(int pos){
+        if (pos < 0 || pos > size){
+            System.out.println("Invalid Pos");
+            return;
+        } 
+        if (pos == 0) {
+            deleteFirst();
+        } else if (pos == size) {
+            deleteEnd();
+        }
+        else {
+            Node temp = head;
 
+            for (int i = 1; i< pos; i++){
+
+            }
+        }
     }
 
     public void display(){
@@ -77,6 +128,15 @@ class Sol{
         list.insertFirst(10);
         list.display();
         list.insertEnd(40);
+        list.insertEnd(50);
+        list.display();
+        list.insertAtPosition(25, 2);
+        list.display();
+        list.deleteFirst();
+        list.display();
+        list.deleteEnd();
+        list.display();
+        list.insertFirst(10);
         list.insertEnd(50);
         list.display();
     }
