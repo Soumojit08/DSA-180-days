@@ -67,6 +67,7 @@ public class LinkedList {
 
     public void deleteFirst(){
         if (head == null){
+            tail = null;
             System.out.println("No elem to delete");
             return;
         }
